@@ -19,5 +19,11 @@ class Genre
     @id = result[0]['id']
   end
 
+  def self.delete_all()
+    sql = 'DELETE FROM genres'
+    result = SqlRunner.run(sql)
+    return result
+  end
+
 
 end

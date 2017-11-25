@@ -2,6 +2,8 @@ require('pry-byebug')
 require_relative('../models/genre')
 require_relative('../models/film')
 
+Film.delete_all
+Genre.delete_all
 
 genre1 = Genre.new({'type' => 'Action'})
 genre1.save
