@@ -1,3 +1,6 @@
+require_relative('./string')
+require_relative('./date')
+
 class Film
 
   attr_reader :id, :genre_id
@@ -7,11 +10,12 @@ class Film
     @id = details['id'].to_i if details['id']
     @title = details['title']
     @genre_id = details['genre_id'].to_i
-    @release_date = details['release_date'].to_date
-    @seen = details['seen']
+    @release_date = details['release_date']
+    @seen = details['seen'].to_boolean
     @rating = details['rating'].to_i
-    @date_seen = details['date_seen'].to_date
+    @date_seen = details['date_seen']
   end
+
 
 
 end
