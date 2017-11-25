@@ -1,5 +1,6 @@
 require('pry-byebug')
 require_relative('../models/genre')
+require_relative('../models/film')
 
 
 genre1 = Genre.new({'type' => 'Action'})
@@ -29,7 +30,27 @@ genre8.save
 genre9 = Genre.new({'type' => 'Thriller'})
 genre9.save
 
+film1 = Film.new({
+  'title' => 'Jaws',
+  'genre_id' => genre9.id,
+  'release_date' => '1975-06-20',
+  'seen' => 'true',
+  'rating' => '5',
+  'date_seen' => '2000-06-15',
+  })
 
+film1.save
+
+film2 = Film.new({
+  'title' => 'Loving',
+  'genre_id' => genre5.id,
+  'release_date' => '2017-02-03',
+  'seen' => 'false',
+  'rating' => 'null',
+  'date_seen' => 'null',
+  })
+
+  film2.save
 
 
 binding.pry
