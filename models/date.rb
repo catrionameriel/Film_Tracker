@@ -1,3 +1,5 @@
+require('date')
+
 class Date
 
   def to_date

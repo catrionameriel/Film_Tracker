@@ -27,8 +27,6 @@ class FilmTest < Minitest::Test
         })
   end
 
-  p @film2.release_date
-
   def test_film_has_id
     assert_equal(1, @film1.id)
   end
@@ -42,7 +40,7 @@ class FilmTest < Minitest::Test
   end
 
   def test_film_has_release_date
-    assert_equal(1994-07-06, @film2.release_date)
+    assert_equal('1994-07-06', @film2.release_date)
   end
 
   def test_film_been_seen
@@ -59,6 +57,14 @@ class FilmTest < Minitest::Test
 
   def test_film_has_no_rating
     assert_equal(0, @film2.rating)
+  end
+
+  def test_film_has_date_seen
+    assert_equal('2000-12-06', @film1.date_seen)
+  end
+
+  def test_film_has_date_seen__not
+    assert_equal('null', @film2.date_seen)
   end
 
 
