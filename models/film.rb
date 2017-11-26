@@ -72,6 +72,14 @@ class Film
     return genre
   end
 
+  def self.find_films_by_rating(rating)
+    sql = 'SELECT * FROM films WHERE rating = $1'
+    values = [rating]
+    result = SqlRunner.run(sql, values)
+    films = result.map{ |film| Film.new (film) }
+    return films
+  end
+
 
 
 end

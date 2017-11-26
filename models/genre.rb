@@ -28,7 +28,7 @@ class Genre
   def self.all()
     sql = 'SELECT * FROM genres'
     result = SqlRunner.run(sql)
-    genres = result.map { |genre| Genre.new(genre) }
+    genres = result.map { |genre| Genre.new (genre) }
     return genres
   end
 
@@ -38,6 +38,14 @@ class Genre
     result = SqlRunner.run(sql, values)[0]
     genre = Genre.new(result)
     return genre
+  end
+
+  def films()
+    sql = 'SELECT * FROM films WHERE genre_id = $1'
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    films = result.map { |film| Film.new(film) }
+    return films
   end
 
 

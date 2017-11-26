@@ -54,6 +54,17 @@ film2 = Film.new({
 
   film2.save
 
+film3 = Film.new({
+  'title' => 'The Raid',
+  'genre_id' => genre1.id,
+  'release_date' => '2012-05-18',
+  'seen' => 'true',
+  'rating' => '5',
+  'date_seen' => '2012-05-25',
+    })
+
+  film3.save
+
 
 binding.pry
 nil
