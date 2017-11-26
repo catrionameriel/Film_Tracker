@@ -3,7 +3,9 @@ require('date')
 class Date
 
   def to_date
-    return Date.parse(self)
+    string = self
+    date = Date.parse(string)
+    return date
   end
 
 end

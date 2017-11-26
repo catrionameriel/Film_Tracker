@@ -37,6 +37,7 @@ class Genre
     values = [id]
     result = SqlRunner.run(sql, values)[0]
     genre = Genre.new(result)
+    return genre
   end
 
 

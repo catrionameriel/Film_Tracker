@@ -1,6 +1,7 @@
 require_relative('./string')
-require_relative('./date')
+require_relative('./genre')
 require_relative('../db/sql_runner')
+# require('date')
 
 class Film
 
@@ -60,6 +61,15 @@ class Film
     values = [id]
     result = SqlRunner.run(sql, values)[0]
     film = Film.new(result)
+    return film
+  end
+
+  def genre()
+    sql = 'SELECT * FROM genres WHERE id = $1'
+    values = [@genre_id]
+    result = SqlRunner.run(sql, values)[0]
+    genre = Genre.new(result)
+    return genre
   end
 
 
