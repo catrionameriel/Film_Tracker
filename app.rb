@@ -17,6 +17,19 @@ get '/archive' do
   erb(:archive)
 end
 
+# View more info
+get '/archive/:id' do
+  @film = Film.find_by_id(params[:id])
+  erb(:more)
+end
+
+# View films by rating
+get '/archive/film/:rating' do
+  @rating = params[:rating]
+  @films = Film.find_films_by_rating(params[:rating])
+  erb(:rated)
+end
+
 # New
 get '/new' do
   @genres = Genre.all
@@ -34,13 +47,6 @@ post '/' do
   end
   @new_film = Film.new(params).save
   redirect to '/'
-end
-
-
-# View more info
-get '/archive/:id' do
-  @film = Film.find_by_id(params[:id])
-  erb(:more)
 end
 
 # Edit

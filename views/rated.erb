@@ -1,14 +1,10 @@
-<h1>Films</h1>
-
-<a href='/archive/film/5'>5 * </a>
-
-</div>
+<h1>Films with a <%= @rating %> * rating:</h1>
   <div>
     <% @films.each do |film| %>
     <h3>Title: <%= film.title %></h3>
     <h3>Genre: <%= film.genre.type %></h3>
     <h3>Release Date: <%= film.release_date %></h3>
-    <p><a href='/archive/<%= film.id %>'>More<a><p>
+    <h3>Date Seen: <%= film.date_seen %></h3>
     <hr>
     <% end %>
   </div>
