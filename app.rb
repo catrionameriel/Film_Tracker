@@ -10,6 +10,16 @@ get '/' do
 end
 
 # View all seen
+get '/archive' do
+  @films = Film.find_films_by_seen(true)
+  erb(:archive)
+end
+
+# View more info
+get '/archive/:id' do
+  @film = Film.find_film_by_id(params[:id])
+  erb(:more)
+end
 
 # Edit
 
