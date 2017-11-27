@@ -36,11 +36,11 @@ genre9.save
 film1 = Film.new({
   'title' => 'Jaws',
   'genre_id' => genre9.id,
-  'release_date' => '20-06-1975',
+  'release_date' => Date.new(1975,6,20),
   'seen' => 'true',
   'rating' => '5',
   #'date_seen' => Date.new(2000-06-15)
-  'date_seen' => '15-06-2000'
+  'date_seen' => Date.new(2000,6,15)
   })
 
 film1.save
@@ -49,7 +49,7 @@ film2 = Film.new({
   'title' => 'Loving',
   'genre_id' => genre5.id,
   # 'release_date' => Date.new(2017-02-03),
-  'release_date' => '03-02-2017',
+  'release_date' => Date.new(2017,2,3),
   'seen' => 'false'
   })
 
@@ -58,12 +58,12 @@ film2 = Film.new({
 film3 = Film.new({
   'title' => 'The Raid',
   'genre_id' => genre1.id,
-  # 'release_date' => Date.new(2012-05-18),
-  'release_date' => '18-05-2012',
+  'release_date' => Date.new(2012,5,18),
+  # 'release_date' => '18-05-2012',
   'seen' => 'true',
   'rating' => '5',
-  # 'date_seen' => Date.new(2012-05-25)
-  'date_seen' => '25-05-2012'
+  'date_seen' => Date.new(2012,5,25)
+  # 'date_seen' => '25-05-2012'
     })
 
   film3.save

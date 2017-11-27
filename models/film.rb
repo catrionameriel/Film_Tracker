@@ -1,7 +1,7 @@
 require_relative('./string')
 require_relative('./genre')
 require_relative('../db/sql_runner')
-# require('date')
+require('date')
 
 class Film
 
@@ -88,6 +88,40 @@ class Film
     films = result.map { |film| Film.new (film) }
     return films
   end
+
+  def update()
+    sql = 'UPDATE films
+    SET(
+      title,
+      genre_id,
+      release_date,
+      seen,
+      rating,
+      date_seen
+      )=
+      ($1, $2, $3, $4, $5, $6)
+      WHERE id = $7'
+      values = [
+        @title,
+        @genre_id,
+        @release_date,
+        @seen,
+        @rating,
+        @date_seen,
+        @id
+      ]
+      result = SqlRunner.run(sql, values)[0]
+      film = Film.new(result)
+  end
+
+  # def store_date
+  #   @release_date = Date.parse(@release_date)
+  #   if @date_seen.empty?
+  #     @date_seen = NULL
+  #   else
+  #     @date_seen = Date.parse(@date_seen)
+  #   end
+  # end
 
 
 
