@@ -58,6 +58,11 @@ put '/:id' do
   else
     params[:date_seen] = Date.parse(params[:date_seen])
   end
+  if params[:rating].empty?
+    params[:rating] = nil
+  else
+    params[:rating] = params[:rating]
+  end
   Film.new(params).update
   redirect to '/'
 end

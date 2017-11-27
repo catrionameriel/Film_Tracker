@@ -15,7 +15,7 @@ class Film
     @release_date = details['release_date']
     # @release_date = Date.strptime(details['release_date'], '%d-%m-%Y')
     @seen = details['seen'].to_boolean
-    @rating = details['rating'].to_i if details['rating']
+    @rating = details['rating'] if details['rating']
     @date_seen = details['date_seen']
   end
 
@@ -110,8 +110,7 @@ class Film
         @date_seen,
         @id
       ]
-      result = SqlRunner.run(sql, values)[0]
-      film = Film.new(result)
+      result = SqlRunner.run(sql, values)
   end
 
   # def store_date
