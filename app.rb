@@ -17,10 +17,13 @@ end
 
 # View more info
 get '/archive/:id' do
-  @film = Film.find_film_by_id(params[:id])
+  @film = Film.find_by_id(params[:id])
   erb(:more)
 end
 
 # Edit
+get '/:id/edit' do
+  erb(:edit)
+end
 
 # Update
