@@ -13,8 +13,9 @@ class Film
     @title = details['title']
     @genre_id = details['genre_id'].to_i
     @release_date = details['release_date']
+    # @release_date = Date.strptime(details['release_date'], '%d-%m-%Y')
     @seen = details['seen'].to_boolean
-    @rating = details['rating'].to_i
+    @rating = details['rating'].to_i if details['rating']
     @date_seen = details['date_seen']
   end
 
@@ -77,6 +78,14 @@ class Film
     values = [rating]
     result = SqlRunner.run(sql, values)
     films = result.map{ |film| Film.new (film) }
+    return films
+  end
+
+  def self.find_films_by_seen(seen)
+    sql = 'SELECT * FROM films WHERE seen = $1'
+    values = [seen]
+    result = SqlRunner.run(sql, values)
+    films = result.map { |film| Film.new (film) }
     return films
   end
 
