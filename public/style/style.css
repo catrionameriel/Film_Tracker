@@ -1,7 +1,7 @@
 body{
   margin: 0;
   padding: 0;
-  background-color: rgb(245, 246, 246)
+  background-color: rgb(245, 245, 246);
 }
 
 h1{
@@ -29,7 +29,7 @@ nav{
   margin: 0.2em 0.5em 0 0.2em;
   top: 0;
   padding: 0.5em;
-  background-color: rgba(200, 230, 228, 0.9);
+  background-color: rgba(145, 190, 212, 0.9);
   position: fixed;
 }
 
@@ -44,13 +44,17 @@ li a.big-button{
   border-radius: 2px;
   margin: 0.5em 0 0.5em 0;
   width: 100%;
-  background-color: rgba(252, 255, 254, 0.5);
+  background-color: rgb(217, 232, 245);
   color: black;
   text-decoration: none;
   font-family: 'Quicksand', sans-serif;
   font-size: 1.5em;
   text-align: center;
   padding: 0.5em 0
+}
+
+li a.big-button:hover{
+  background-color: white
 }
 
 .action-buttons{
@@ -60,22 +64,28 @@ li a.big-button{
 form .big-button{
   width: 6em;
   border-radius: 5px;
-  background-color: rgb(21, 61, 114);
+  background-color: rgb(10, 24, 41);
   color: rgb(252, 255, 254);
   padding: 0.3em 0;
   margin: 1em 0;
   font-family: 'Quicksand', sans-serif;
   font-size: 1em;
+  border-style: none;
+}
+
+form .big-button:hover{
+  background-color: rgb(242, 97, 1);
 }
 
 .search{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 50%;
   margin-left: auto;
   margin-right: auto;
-  background-color:
+  background-color: rgb(224, 224, 224);
+  border-radius: 5px;
 }
 
 section{
@@ -98,7 +108,7 @@ section h1{
 }
 
 .select{
-  margin: 2em
+  margin: 2em;
 }
 
 .add-button{
@@ -111,9 +121,13 @@ section h1{
   position: fixed;
   right: 1em;
   bottom: 1em;
-  background-color: rgb(21, 61, 114);
+  background-color: rgb(10, 24, 41);
   color: white;
   text-decoration: none;
   font-size: 2em;
   padding: 1em
+}
+
+.add-button:hover{
+  background-color: rgb(242, 97, 1);
 }
