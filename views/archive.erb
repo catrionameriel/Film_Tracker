@@ -23,7 +23,7 @@
   <form action="/films/archive/genre" method="get">
     <div class="select">
       <div>
-      <select name="id">
+      <select name="id" "seen">
         <% for genre in @genres %>
         <option value="<%= genre.id %>"> <%= genre.type %></option>
         <% end %>
