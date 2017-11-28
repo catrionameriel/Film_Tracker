@@ -1,7 +1,7 @@
 body{
   margin: 0;
   padding: 0;
-  background-color: rgb(245, 245, 246);
+  background-color: rgb(218, 235, 242);
 }
 
 h1{
@@ -29,7 +29,7 @@ nav{
   margin: 0.2em 0.5em 0 0.2em;
   top: 0;
   padding: 0.5em;
-  background-color: rgba(145, 190, 212, 0.9);
+  background-color: rgba(19, 117, 187, 0.9);
   position: fixed;
 }
 
@@ -44,8 +44,8 @@ li a.big-button{
   border-radius: 2px;
   margin: 0.5em 0 0.5em 0;
   width: 100%;
-  background-color: rgb(217, 232, 245);
-  color: black;
+  background-color: rgb(20, 70, 111);
+  color: white;
   text-decoration: none;
   font-family: 'Quicksand', sans-serif;
   font-size: 1.5em;
@@ -54,7 +54,8 @@ li a.big-button{
 }
 
 li a.big-button:hover{
-  background-color: white
+  background-color: white;
+  color: black
 }
 
 .action-buttons{
@@ -84,8 +85,13 @@ form .big-button:hover{
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(224, 224, 224);
+  background-color: rgb(255, 210, 150);
   border-radius: 5px;
+  border: 1px rgba(10, 24, 42, 0.17) solid;
+}
+
+.search h2{
+  margin: 0
 }
 
 section{
@@ -105,10 +111,11 @@ section h1{
   background-color: white;
   border-radius: 2px;
   width: 30%;
+  border: 1px rgba(10, 24, 42, 0.5) solid;
 }
 
 .select{
-  margin: 2em;
+  margin: 1em;
 }
 
 .add-button{
