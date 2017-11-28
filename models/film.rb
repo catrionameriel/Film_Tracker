@@ -146,19 +146,5 @@ class Film
     self.check_rating(options)
   end
 
-  # def self.check_params(options)
-  #   if options[:date_seen].empty?
-  #     options[:date_seen] = nil
-  #   else
-  #     options[:date_seen] = Date.parse(options[:date_seen])
-  #   end
-  #   if options[:rating].empty?
-  #     options[:rating] = nil
-  #   else
-  #     options[:rating] = options[:rating]
-  #   end
-  # end
-
-
 
 end

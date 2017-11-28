@@ -12,11 +12,11 @@
 
   <h3><%= film.release_date %></h3>
 
-  <form action="/<%=film.id%>/edit" method="get">
+  <form action="/films/<%=film.id%>/edit" method="get">
     <button class="big-button button">Edit</button>
   </form>
 
-  <form action="/<%=film.id%>/delete" method="post">
+  <form action="/films/<%=film.id%>/delete" method="post">
     <input type="hidden" name="_method" value="delete">
   <button class="big-button button">Delete</button>
   </form>

@@ -5,7 +5,7 @@
 
 <div class="search">
 <h2>Search by:</h2>
-  <form action="/archive/films" method="get">
+  <form action="/films/archive/rating" method="get">
     <div class="select">
       <div>
         <select name="rating">
@@ -20,7 +20,7 @@
     </div>
   </form>
 
-  <form action="/archive/genre" method="get">
+  <form action="/films/archive/genre" method="get">
     <div class="select">
       <div>
       <select name="id">
@@ -43,7 +43,7 @@
 
     <h3>Release Date: <%= film.release_date %></h3>
 
-    <form action="/archive/<%=film.id%>" method="get">
+    <form action="/films/archive/<%=film.id%>" method="get">
       <button class="big-button button">More</button>
     </form>
 
