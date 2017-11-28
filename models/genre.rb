@@ -40,8 +40,16 @@ class Genre
     return genre
   end
 
-  def films()
-    sql = 'SELECT * FROM films WHERE genre_id = $1'
+  def films_seen()
+    sql = 'SELECT * FROM films WHERE genre_id = $1 AND seen = true'
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    films = result.map { |film| Film.new(film) }
+    return films
+  end
+
+  def films_not_seen()
+    sql = 'SELECT * FROM films WHERE genre_id = $1 AND seen = false'
     values = [@id]
     result = SqlRunner.run(sql, values)
     films = result.map { |film| Film.new(film) }

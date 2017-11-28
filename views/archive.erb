@@ -8,6 +8,7 @@
   <form action="/films/archive/rating" method="get">
     <div class="select">
       <div>
+        <button class="big-button button">Rating</button>
         <select name="rating">
           <option value="1">1</option>
           <option value="2">2</option>
@@ -16,20 +17,19 @@
           <option value="5">5</option>
         </select>
       </div>
-      <button class="big-button button">Rating</button>
     </div>
   </form>
 
   <form action="/films/archive/genre" method="get">
     <div class="select">
       <div>
-      <select name="id" "seen">
+      <button class="big-button button">Genre</button>
+      <select name="id">
         <% for genre in @genres %>
         <option value="<%= genre.id %>"> <%= genre.type %></option>
         <% end %>
       </select>
       </div>
-      <button class="big-button button">Genre</button>
     </div>
   </form>
 </div>
@@ -37,11 +37,11 @@
     <% @films.each do |film| %>
     <div class="list">
 
-    <h3>Title: <%= film.title %></h3>
+    <h2><%= film.title %></h2>
 
-    <h3>Genre: <%= film.genre.type %></h3>
+    <h3><%= film.genre.type %></h3>
 
-    <h3>Release Date: <%= film.pretty_release_date %></h3>
+    <h3>Rating: <%= film.rating %>*</h3>
 
     <form action="/films/archive/<%=film.id%>" method="get">
       <button class="big-button button">More</button>

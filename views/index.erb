@@ -1,6 +1,18 @@
-<div class="heading">
-  <h1>See</h1>
-</div>
+<h1>See</h1>
+
+
+<form action="/films/genre" method="get">
+  <div class="select">
+    <div>
+    <select name="id">
+      <% for genre in @genres %>
+      <option value="<%= genre.id %>"> <%= genre.type %></option>
+      <% end %>
+    </select>
+    </div>
+    <button class="big-button">Genre</button>
+  </div>
+</form>
 
 <div>
   <% @films.each do |film| %>

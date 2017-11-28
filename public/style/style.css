@@ -72,8 +72,10 @@ form .big-button{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  background-color: rgba(232, 213, 149, 0.7)
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:
 }
 
 section{
@@ -88,7 +90,11 @@ section h1{
 }
 
 .list{
-  margin: 1em 5em;
+  margin: 2em auto;
+  padding: 1em;
+  background-color: white;
+  border-radius: 2px;
+  width: 30%;
 }
 
 .select{

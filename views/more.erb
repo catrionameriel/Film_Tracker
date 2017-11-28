@@ -1,17 +1,19 @@
 <h1>More info</h1>
+
+<div class="list">
   <h2><%= @film.title %></h2>
   <h3><%= @film.genre.type %></h3>
   <h3>Release Date: <%= @film.pretty_release_date %></h3>
   <h3>Rating: <%= @film.rating %>*</h3>
   <h3>Date Seen: <%= @film.pretty_seen_date %></h3>
 
-<div class="line">
   <form class="action-buttons" action="/films/<%=@film.id%>/edit" method="get">
-  <button class="big-button button">Edit</button>
+    <button class="big-button button">Edit</button>
   </form>
 
   <form class="action-buttons" action="/films/archive/<%=@film.id%>/delete" method="post">
     <input type="hidden" name="_method" value="delete">
-  <button class="big-button button">Delete</button>
+    <button class="big-button button">Delete</button>
   </form>
+
 </div>

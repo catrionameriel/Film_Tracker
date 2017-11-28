@@ -8,6 +8,7 @@ require_relative('./models/genre')
 # View all unseen
 get '/films' do
   @films = Film.find_films_by_seen(false)
+  @genres = Genre.all
   erb(:index)
 end
 
@@ -25,11 +26,19 @@ get '/films/archive/rating' do
   erb(:rated)
 end
 
-# View films by genre
+# View seen films by genre
 get '/films/archive/genre' do
   @id = params[:id]
   @genre = Genre.find_by_id(@id)
-  @films = @genre.films
+  @films = @genre.films_seen
+  erb(:genre)
+end
+
+# View not seen films by genre
+get '/films/genre' do
+  @id = params[:id]
+  @genre = Genre.find_by_id(@id)
+  @films = @genre.films_not_seen
   erb(:genre)
 end
 
