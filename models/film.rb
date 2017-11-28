@@ -113,6 +113,10 @@ class Film
       result = SqlRunner.run(sql, values)
   end
 
+  def pretty_date
+    return Date.strptime('@release_date')
+  end
+
   # def store_date
   #   @release_date = Date.parse(@release_date)
   #   if @date_seen.empty?

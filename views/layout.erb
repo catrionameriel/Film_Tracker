@@ -2,17 +2,37 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href='/style/style.css'>
+    <link
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Quicksand|Rasa" rel="stylesheet">
     <title>SeeSaw</title>
+    <link rel="icon" href="/images/seesaw.ico"/>
   </head>
   <body>
+
     <nav>
-      <img src='images/seesaw.jpg'>
+      <a href="/"><img src="/images/seesaw.jpg"></a>
       <ul>
-        <li><a href='/'>Home</a></li>
-        <li><a href='/archive'>Seen films</a></li>
-        <li><a href='/new'>New</a></li>
+        <li>
+          <a href="/" class="big-button">See</a>
+        </li>
+        <li>
+            <a href="/archive" class="big-button">Saw</a>
+        </li>
+        <li>
+            <a href="/new" class="big-button">Add</a>
+        </li>
       </ul>
     </nav>
-    <%= yield %>
+
+    <section>
+      <%= yield %>
+    </section>
+
+      <a class="add-button" href="/new">+</a>
+
   </body>
+  <footer>
+
+  </footer>
 </html>

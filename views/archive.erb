@@ -1,14 +1,23 @@
 <h1>Films</h1>
 
-<a href='/archive/film/5'>5 * </a>
+<form action="/archive/film/5" method="get">
+  <button class="big-button">Rating</button>
+</form>
 
 </div>
-  <div>
     <% @films.each do |film| %>
+    <div class="list">
+
     <h3>Title: <%= film.title %></h3>
+
     <h3>Genre: <%= film.genre.type %></h3>
+
     <h3>Release Date: <%= film.release_date %></h3>
-    <p><a href='/archive/<%= film.id %>'>More<a><p>
-    <hr>
+
+    <form action="/archive/<%=film.id%>" method="get">
+      <button class="big-button button">More</button>
+    </form>
+
+    </div>
     <% end %>
-  </div>
+</div>

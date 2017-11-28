@@ -1,0 +1,99 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: rgb(245, 246, 246)
+}
+
+h1{
+  font-family: 'Quicksand', sans-serif;
+  font-size: 6em;
+  margin: 0.3em;
+  margin-bottom: 0.1em
+}
+
+h2{
+  font-family: 'Rasa', serif;
+  font-size: 2em
+}
+
+h3{
+  font-family: 'Rasa', serif;
+  font-size: 1.5em;
+}
+
+nav{
+  display: inline-block;
+  height: 100%;
+  min-height: 1000px;
+  border-radius: 10px;
+  margin: 0.2em 0.5em 0 0.2em;
+  top: 0;
+  padding: 0.5em;
+  background-color: rgba(200, 230, 228, 0.9);
+  position: fixed;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0
+}
+
+li a.big-button{
+  display: block;
+  border-radius: 2px;
+  margin: 0.5em 0 0.5em 0;
+  width: 100%;
+  background-color: rgba(252, 255, 254, 0.5);
+  color: black;
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 0.5em 0
+}
+
+form .big-button{
+  width: 8em;
+  border-radius: 5px;
+  background-color: rgb(21, 61, 114);
+  color: rgb(252, 255, 254);
+  padding: 0.3em 0;
+  margin: 1em 0;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5em;
+}
+
+section{
+  display: block;
+  text-align: center;
+  margin: 1em;
+  padding: 1em;
+  width: 100%
+}
+
+section h1{
+  height: 2em
+}
+
+.list{
+  margin-top: 1em;
+  margin: 5em;
+}
+
+.add-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 0.01em;
+  height: 0.01em;
+  position: fixed;
+  right: 1em;
+  bottom: 1em;
+  background-color: rgb(21, 61, 114);
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+  padding: 1em
+}
