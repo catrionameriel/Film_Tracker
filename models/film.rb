@@ -113,8 +113,15 @@ class Film
       result = SqlRunner.run(sql, values)
   end
 
-  def pretty_date
-    return Date.strptime('@release_date')
+  def delete()
+    sql = 'DELETE FROM films WHERE id = $1'
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+  end
+
+  def pretty_release_date
+    pretty_date = Date.strptime(@release_date.to_s, '%d-%m-%Y')
+    return pretty_date
   end
 
   # def store_date

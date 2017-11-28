@@ -64,10 +64,18 @@ form .big-button{
   font-size: 1.5em;
 }
 
+.search{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: rgba(232, 213, 149, 0.7)
+}
+
 section{
   display: block;
   text-align: center;
-  margin: 1em;
+  /*margin-left: 10em;*/
   padding: 1em;
   width: 100%
 }
@@ -79,6 +87,10 @@ section h1{
 .list{
   margin-top: 1em;
   margin: 5em;
+}
+
+.select{
+  margin: 2em
 }
 
 .add-button{

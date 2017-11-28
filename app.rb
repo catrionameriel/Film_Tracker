@@ -14,20 +14,29 @@ end
 # View all seen
 get '/archive' do
   @films = Film.find_films_by_seen(true)
+  @genres = Genre.all
   erb(:archive)
+end
+
+# View films by rating
+get '/archive/films' do
+  @rating = params[:rating]
+  @films = Film.find_films_by_rating(params[:rating].to_i)
+  erb(:rated)
+end
+
+# View films by genre
+get '/archive/genre' do
+  @id = params[:id]
+  @genre = Genre.find_by_id(@id)
+  @films = @genre.films
+  erb(:genre)
 end
 
 # View more info
 get '/archive/:id' do
   @film = Film.find_by_id(params[:id])
   erb(:more)
-end
-
-# View films by rating
-get '/archive/film/:rating' do
-  @rating = params[:rating]
-  @films = Film.find_films_by_rating(params[:rating])
-  erb(:rated)
 end
 
 # New
@@ -44,6 +53,11 @@ post '/' do
     params[:date_seen] = nil
   else
     params[:date_seen] = Date.parse(params[:date_seen])
+  end
+  if params[:rating].empty?
+    params[:rating] = nil
+  else
+    params[:rating] = params[:rating]
   end
   @new_film = Film.new(params).save
   redirect to '/'
@@ -70,5 +84,19 @@ put '/:id' do
     params[:rating] = params[:rating]
   end
   Film.new(params).update
+  redirect to '/'
+end
+
+# Delete seen
+delete '/archive/:id/delete' do
+  @film = Film.find_by_id(params[:id])
+  @film.delete
+  redirect to '/archive'
+end
+
+# Delete unseen
+delete '/:id/delete' do
+  @film = Film.find_by_id(params[:id])
+  @film.delete
   redirect to '/'
 end

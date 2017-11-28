@@ -2,11 +2,11 @@
   <h2><%= @film.title %></h2>
   <h3><%= @film.genre.type %></h3>
   <h3>Release Date: <%= @film.release_date %></h3>
-  <h3>Rating: <%= @film.rating %></h3>
+  <h3>Rating: <%= @film.rating %>*</h3>
   <h3>Date Seen: <%= @film.date_seen %></h3>
 
-  <form action="/" method="destroy">
-    <input type="hidden" name="_method" value="put">
+  <form action="/archive/<%=@film.id%>/delete" method="post">
+    <input type="hidden" name="_method" value="delete">
   <button class="big-button button">Delete</button>
   </form>
 

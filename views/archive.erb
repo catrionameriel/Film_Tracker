@@ -1,10 +1,39 @@
-<h1>Films</h1>
+<% page = 'archive' %>
+<h1>Saw</h1>
 
-<form action="/archive/film/5" method="get">
-  <button class="big-button">Rating</button>
-</form>
 
+
+<div class="search">
+<h2>Search by:</h2>
+  <form action="/archive/films" method="get">
+    <div class="select">
+      <div>
+        <select name="rating">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+      <button class="big-button button">Rating</button>
+    </div>
+  </form>
+
+  <form action="/archive/genre" method="get">
+    <div class="select">
+      <div>
+      <select name="id">
+        <% for genre in @genres %>
+        <option value="<%= genre.id %>"> <%= genre.type %></option>
+        <% end %>
+      </select>
+      </div>
+      <button class="big-button button">Genre</button>
+    </div>
+  </form>
 </div>
+
     <% @films.each do |film| %>
     <div class="list">
 

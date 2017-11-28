@@ -1,5 +1,5 @@
 <div class="heading">
-  <h1>Films</h1>
+  <h1>See</h1>
 </div>
 
 <div>
@@ -14,6 +14,11 @@
 
   <form action="/<%=film.id%>/edit" method="get">
     <button class="big-button button">Edit</button>
+  </form>
+
+  <form action="/<%=film.id%>/delete" method="post">
+    <input type="hidden" name="_method" value="delete">
+  <button class="big-button button">Delete</button>
   </form>
 
   </div>
