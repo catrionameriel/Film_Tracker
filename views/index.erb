@@ -12,13 +12,13 @@
 
   <h3><%= film.pretty_release_date %></h3>
 
-  <form action="/films/<%=film.id%>/edit" method="get">
-    <button class="big-button button">Edit</button>
+  <form class="action-buttons"action="/films/<%=film.id%>/edit" method="get">
+    <button class="big-button">Edit</button>
   </form>
 
-  <form action="/films/<%=film.id%>/delete" method="post">
+  <form class="action-buttons" action="/films/<%=film.id%>/delete" method="post">
     <input type="hidden" name="_method" value="delete">
-  <button class="big-button button">Delete</button>
+  <button class="big-button">Delete</button>
   </form>
 
   </div>

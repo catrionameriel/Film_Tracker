@@ -3,9 +3,9 @@
   <div>
     <% @films.each do |film| %>
     <div class="list">
-    <h3>Title: <%= film.title %></h3>
+    <h2><%= film.title %></h2>
 
-    <h3>Genre: <%= film.genre.type %></h3>
+    <h3><%= film.genre.type %></h3>
 
     <h3>Release Date: <%= film.pretty_release_date %></h3>
 

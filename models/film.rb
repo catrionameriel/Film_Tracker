@@ -142,14 +142,14 @@ class Film
 
   def pretty_release_date()
     string_to_date = Date.parse(@release_date)
-    pretty_date = string_to_date.strftime('%d-%B-%Y')
+    pretty_date = string_to_date.strftime('%d %B %Y')
     return pretty_date
   end
 
   def pretty_seen_date()
     if @date_seen != nil
       string_to_date = Date.parse(@date_seen)
-      pretty_date = string_to_date.strftime('%d-%B-%Y')
+      pretty_date = string_to_date.strftime('%d %B %Y')
       return pretty_date
     else
       return @date_seen

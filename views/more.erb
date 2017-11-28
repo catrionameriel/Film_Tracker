@@ -6,11 +6,11 @@
   <h3>Date Seen: <%= @film.pretty_seen_date %></h3>
 
 <div class="line">
-  <form action="/films/<%=@film.id%>/edit" method="get">
+  <form class="action-buttons" action="/films/<%=@film.id%>/edit" method="get">
   <button class="big-button button">Edit</button>
   </form>
 
-  <form action="/films/archive/<%=@film.id%>/delete" method="post">
+  <form class="action-buttons" action="/films/archive/<%=@film.id%>/delete" method="post">
     <input type="hidden" name="_method" value="delete">
   <button class="big-button button">Delete</button>
   </form>
