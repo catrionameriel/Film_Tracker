@@ -125,27 +125,39 @@ class Film
     return pretty_date
   end
 
-  # def store_date
-  #   @release_date = Date.parse(@release_date)
-  #   if @date_seen.empty?
-  #     @date_seen = NULL
-  #   else
-  #     @date_seen = Date.parse(@date_seen)
-  #   end
-  # end
-
-  def self.check_params(params)
-    if params[:date_seen].empty?
-      params[:date_seen] = nil
+  def self.check_date(date)
+    if date[:date_seen].empty?
+      date[:date_seen] = nil
     else
-      params[:date_seen] = Date.parse(params[:date_seen])
-    end
-    if params[:rating].empty?
-      params[:rating] = nil
-    else
-      params[:rating] = params[:rating]
+      date[:date_seen] = Date.parse(date[:date_seen])
     end
   end
+
+  def self.check_rating(rating)
+    if rating[:rating].empty?
+      rating[:rating] = nil
+    else
+      rating[:rating] = rating[:rating]
+    end
+  end
+
+  def self.check_params(options)
+    self.check_date(options)
+    self.check_rating(options)
+  end
+
+  # def self.check_params(options)
+  #   if options[:date_seen].empty?
+  #     options[:date_seen] = nil
+  #   else
+  #     options[:date_seen] = Date.parse(options[:date_seen])
+  #   end
+  #   if options[:rating].empty?
+  #     options[:rating] = nil
+  #   else
+  #     options[:rating] = options[:rating]
+  #   end
+  # end
 
 
 
