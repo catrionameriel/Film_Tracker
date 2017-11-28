@@ -131,3 +131,11 @@ section h1{
 .add-button:hover{
   background-color: rgb(242, 97, 1);
 }
+
+.add-button:nth-child(4){
+  right: 3.25em;
+}
+
+.add-button:nth-child(5){
+  right: 5.5em;
+}
