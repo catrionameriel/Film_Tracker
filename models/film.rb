@@ -14,7 +14,6 @@ class Film
     @title = details['title']
     @genre_id = details['genre_id'].to_i
     @release_date = details['release_date']
-    # @release_date = Date.strptime(details['release_date'], '%d-%m-%Y')
     @seen = details['seen'].to_boolean
     @rating = details['rating'] if details['rating']
     @date_seen = details['date_seen']
@@ -120,11 +119,6 @@ class Film
     result = SqlRunner.run(sql, values)
   end
 
-  def pretty_release_date
-    pretty_date = Date.strptime(@release_date.to_s, '%d-%m-%Y')
-    return pretty_date
-  end
-
   def self.check_date(date)
     if date[:date_seen].empty?
       date[:date_seen] = nil
@@ -144,6 +138,18 @@ class Film
   def self.check_params(options)
     self.check_date(options)
     self.check_rating(options)
+  end
+
+  def pretty_release_date()
+    string_to_date = Date.parse(@release_date)
+    pretty_date = string_to_date.strftime('%d-%B-%Y')
+    return pretty_date
+  end
+
+  def pretty_seen_date()
+    string_to_date = Date.parse(@date_seen)
+    pretty_date = string_to_date.strftime('%d-%B-%Y')
+    return pretty_date
   end
 
 

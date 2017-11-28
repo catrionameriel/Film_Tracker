@@ -41,7 +41,7 @@
 
     <h3>Genre: <%= film.genre.type %></h3>
 
-    <h3>Release Date: <%= film.release_date %></h3>
+    <h3>Release Date: <%= film.pretty_release_date %></h3>
 
     <form action="/films/archive/<%=film.id%>" method="get">
       <button class="big-button button">More</button>

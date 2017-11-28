@@ -1,9 +1,9 @@
 <h1>More info</h1>
   <h2><%= @film.title %></h2>
   <h3><%= @film.genre.type %></h3>
-  <h3>Release Date: <%= @film.release_date %></h3>
+  <h3>Release Date: <%= @film.pretty_release_date %></h3>
   <h3>Rating: <%= @film.rating %>*</h3>
-  <h3>Date Seen: <%= @film.date_seen %></h3>
+  <h3>Date Seen: <%= @film.pretty_seen_date %></h3>
 
 <div class="line">
   <form action="/films/<%=@film.id%>/edit" method="get">
