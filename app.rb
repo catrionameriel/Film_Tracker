@@ -49,16 +49,7 @@ end
 # Create
 post '/' do
   params[:release_date] = Date.parse(params[:release_date])
-  if params[:date_seen].empty?
-    params[:date_seen] = nil
-  else
-    params[:date_seen] = Date.parse(params[:date_seen])
-  end
-  if params[:rating].empty?
-    params[:rating] = nil
-  else
-    params[:rating] = params[:rating]
-  end
+  Film.check_params(params)
   @new_film = Film.new(params).save
   redirect to '/'
 end
@@ -73,16 +64,7 @@ end
 # Update
 put '/:id' do
   params[:release_date] = Date.parse(params[:release_date])
-  if params[:date_seen].empty?
-    params[:date_seen] = nil
-  else
-    params[:date_seen] = Date.parse(params[:date_seen])
-  end
-  if params[:rating].empty?
-    params[:rating] = nil
-  else
-    params[:rating] = params[:rating]
-  end
+  Film.check_params(params)
   Film.new(params).update
   redirect to '/'
 end

@@ -2,6 +2,7 @@ require_relative('./string')
 require_relative('./genre')
 require_relative('../db/sql_runner')
 require('date')
+require('pry-byebug')
 
 class Film
 
@@ -132,6 +133,19 @@ class Film
   #     @date_seen = Date.parse(@date_seen)
   #   end
   # end
+
+  def self.check_params(params)
+    if params[:date_seen].empty?
+      params[:date_seen] = nil
+    else
+      params[:date_seen] = Date.parse(params[:date_seen])
+    end
+    if params[:rating].empty?
+      params[:rating] = nil
+    else
+      params[:rating] = params[:rating]
+    end
+  end
 
 
 

@@ -47,14 +47,15 @@
           type="radio"
           name="seen"
           value="f"
-          checked=<% "checked" if @film.seen == false%>>
+          checked=<%= "checked" if @film.seen == true %>>
           Not Seen
       </div>
       <input
         type="radio"
         name="seen"
         value="t"
-        checked=<% "checked" if @film.seen == true%>>
+        checked<%= "checked" if @film.seen == false %>
+        >
         Seen
     </div>
   </div>
