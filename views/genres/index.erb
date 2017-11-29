@@ -1,8 +1,20 @@
 <h1>Genres</h1>
 
-<div>
-  <% @genres.each do |genre| %>
+<div class="search">
+  <a class="big-button" href="/admin/genres/new">New</a>
+</div>
 
-  <h2><%= genre.type%></h2>
+<div class="list">
+  <% @genres.each do |genre| %>
+  <div class ="select">
+
+    <h2><%= genre.type%></h2>
+
+    <form class="action-buttons" action="/admin/genres/<%=genre.id%>/delete" method="post">
+      <input type="hidden" name="_method" value="delete">
+    <button class="big-button">Delete</button>
+    </form>
+
+  </div>
   <% end %>
 </div>
