@@ -156,5 +156,11 @@ class Film
     end
   end
 
+  def update_seen
+    sql = 'UPDATE films SET(seen)=($1) WHERE id = $2'
+    values = [@seen, @id]
+    result = SqlRunner.run(sql, values)
+  end
+
 
 end

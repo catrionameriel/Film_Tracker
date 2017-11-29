@@ -26,7 +26,7 @@
 
   <h3><%= film.pretty_release_date %></h3>
 
-  <form class="action-buttons"action="/films/<%=film.id%>/edit" method="get">
+  <form class="action-buttons" action="/films/<%=film.id%>/edit" method="get">
     <button class="big-button">Edit</button>
   </form>
 
@@ -35,8 +35,9 @@
   <button class="big-button">Delete</button>
   </form>
 
-  <form class="action-buttons" action="/films/<%=film.id%>/edit" method="get">
-  <button class="big-button">√</button>
+  <form class="action-buttons" action="/films/<%=film.id%>/seen" method="post">
+    <input type="hidden" name="_method" value="put">
+  <button class="tick">√</button>
   </form>
 
   </div>

@@ -69,6 +69,14 @@ get '/films/:id/edit' do
   erb(:'films/edit')
 end
 
+# Edit to seen
+put '/films/:id/seen' do
+  @film = Film.find_by_id(params[:id])
+  @film.seen = "true"
+  @film.update_seen
+  redirect to '/films'
+end
+
 # Update
 put '/films/:id' do
   params[:release_date] = Date.parse(params[:release_date])
