@@ -1,4 +1,4 @@
-<h1><%= @genre.type %>s</h1>
+<h1><%= @genre.type %> Films</h1>
 
 <div>
   <% for film in @films %>
@@ -8,6 +8,10 @@
     <h3><%= film.genre.type %></h3>
 
     <h3>Release Date: <%= film.pretty_release_date %></h3>
+
+    <h3>Rating: <%= film.rating %>*</h3>
+
+    <h3>Date Seen: <%= film.pretty_seen_date %></h3>
 
     <form class="action-buttons" action="/films/<%=film.id%>/edit" method="get">
       <button class="big-button button">Edit</button>

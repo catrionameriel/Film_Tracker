@@ -70,6 +70,7 @@
         min="1"
         max="5"
         placeholder="Rating"
+        value="<%= @film.rating if @film.rating != nil %>"
       />
     </div>
   </div>
@@ -83,6 +84,7 @@
         type="date"
         name="date_seen"
         placeholder="Date Seen"
+        value="<%= @film.date_seen if @film.date_seen != nil %>"
       />
     </div>
   </div>
