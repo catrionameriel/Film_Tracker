@@ -9,21 +9,21 @@ require_relative('./models/genre')
 get '/films' do
   @films = Film.find_films_by_seen(false)
   @genres = Genre.all
-  erb(:index)
+  erb(:'films/index')
 end
 
 # View all seen
 get '/films/archive' do
   @films = Film.find_films_by_seen(true)
   @genres = Genre.all
-  erb(:archive)
+  erb(:'films/archive')
 end
 
 # View films by rating
 get '/films/archive/rating' do
   @rating = params[:rating]
   @films = Film.find_films_by_rating(params[:rating].to_i)
-  erb(:rated)
+  erb(:'films/rated')
 end
 
 # View seen films by genre
@@ -31,7 +31,7 @@ get '/films/archive/genre' do
   @id = params[:id]
   @genre = Genre.find_by_id(@id)
   @films = @genre.films_seen
-  erb(:genre)
+  erb(:'films/genre')
 end
 
 # View not seen films by genre
@@ -39,19 +39,19 @@ get '/films/genre' do
   @id = params[:id]
   @genre = Genre.find_by_id(@id)
   @films = @genre.films_not_seen
-  erb(:genre)
+  erb(:'films/genre')
 end
 
 # View more info
 get '/films/archive/:id' do
   @film = Film.find_by_id(params[:id])
-  erb(:more)
+  erb(:'films/more')
 end
 
 # New
 get '/films/new' do
   @genres = Genre.all
-  erb(:new)
+  erb(:'films/new')
 end
 
 
@@ -67,7 +67,7 @@ end
 get '/films/:id/edit' do
   @film = Film.find_by_id(params[:id])
   @genres = Genre.all
-  erb(:edit)
+  erb(:'films/edit')
 end
 
 # Update
@@ -89,5 +89,9 @@ end
 delete '/films/:id/delete' do
   @film = Film.find_by_id(params[:id])
   @film.delete
+  redirect to '/films'
+end
+
+get '/' do
   redirect to '/films'
 end

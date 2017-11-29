@@ -5,12 +5,12 @@
   <form action="/films/genre" method="get">
     <div class="select">
       <div>
-        <button class="big-button">Genre</button>
         <select name="id">
           <% for genre in @genres %>
           <option value="<%= genre.id %>"> <%= genre.type%></option>
           <% end %>
         </select>
+        <button class="big-button">Go</button>
       </div>
     </div>
   </form>
