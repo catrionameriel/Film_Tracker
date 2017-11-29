@@ -32,6 +32,12 @@ class Genre
     return genres
   end
 
+  def delete()
+    sql = 'DELETE WHERE id = $1'
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+  end
+
   def self.find_by_id(id)
     sql = 'SELECT * FROM genres WHERE id = $1'
     values = [id]

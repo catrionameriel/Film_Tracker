@@ -25,5 +25,10 @@ post '/admin/genres' do
 end
 
 
-
-# Delete genre
+# # Delete genre
+#
+# delete '/admin/genres/:id/delete'do
+#   @genre = Genre.find_by_id(params[:id])
+#   @genre.delete
+#   redirect to '/admin/genres'
+# end
