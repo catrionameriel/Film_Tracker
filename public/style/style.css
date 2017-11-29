@@ -12,12 +12,14 @@ h1{
 }
 
 h2{
-  font-family: 'Rasa', serif;
+  /*font-family: 'Rasa', serif;*/
+  font-family: 'Open Sans', sans-serif;
   font-size: 2em
 }
 
 h3{
-  font-family: 'Rasa', serif;
+  /*font-family: 'Rasa', serif;*/
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.5em;
 }
 
@@ -91,7 +93,15 @@ form .big-button:hover{
 }
 
 .tick:hover{
-  background-color: rgb(242, 97, 1);
+    background-color: rgb(242, 97, 1);
+}
+
+.tick::after{
+  content: "Seen"
+}
+
+.tick:hover::after{
+  content: "√";
 }
 
 .big-button{
@@ -111,6 +121,26 @@ form .big-button:hover{
   background-color: rgb(242, 97, 1);
 }
 
+.input-form{
+  display: block;
+  width: 30%;
+  padding: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(255, 210, 150);
+  border-radius: 5px;
+  border: 1px rgba(10, 24, 42, 0.17) solid;
+}
+
+.field-group{
+  padding: 0.5em
+}
+
+label{
+  /*font-family: 'Rasa', serif;*/
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2em;
+}
 .search{
   display: flex;
   justify-content: center;

@@ -1,4 +1,6 @@
-<form class="list" action="/films/<%=@film.id%>" method="post">
+<h1>Update a film</h1>
+
+<form class="input-form" action="/films/<%=@film.id%>" method="post">
   <input type="hidden" name="_method" value="put">
 
 
@@ -64,14 +66,14 @@
   <div class="field-group">
     <label for="rating-field" class="label">Rating:</label>
     <div class="field">
-      <input
-        type="number"
-        name="rating"
-        min="1"
-        max="5"
-        placeholder="Rating"
-        value="<%= @film.rating if @film.rating != nil %>"
-      />
+      <select name="rating">
+        <option value="Rating">Rating</option>
+        <option value="1"<%= "selected" if @film.rating == "1" %>>1</option>
+        <option value="2"<%= "selected" if @film.rating == "2" %>>2</option>
+        <option value="3"<%= "selected" if @film.rating == "3" %>>3</option>
+        <option value="4"<%= "selected" if @film.rating == "4" %>>4</option>
+        <option value="5"<%= "selected" if @film.rating == "5" %>>5</option>
+      </select>
     </div>
   </div>
 

@@ -1,4 +1,7 @@
-<form action="/films" method="post">
+<h1>Add a new film</h1>
+
+
+<form class = "input-form" action="/films" method="post">
 
   <div class="field-group">
     <label for="title-field" class="label">Title:</label>
@@ -58,13 +61,14 @@
   <div class="field-group">
     <label for="rating-field" class="label">Rating:</label>
     <div class="field">
-      <input
-        type="number"
-        name="rating"
-        min="0"
-        max="5"
-        placeholder="Rating"
-      />
+      <select name="rating">
+        <option value="Rating">Rating</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
     </div>
   </div>
 
