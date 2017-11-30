@@ -12,15 +12,18 @@ h1{
 }
 
 h2{
-  /*font-family: 'Rasa', serif;*/
   font-family: 'Open Sans', sans-serif;
   font-size: 2em
 }
 
 h3{
-  /*font-family: 'Rasa', serif;*/
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5em;
+}
+
+h4{
+  font-family: 'Quicksand', sans-serif;
+  font-size: 3em;
 }
 
 nav{
@@ -58,6 +61,33 @@ li a.big-button{
 li a.big-button:hover{
   background-color: white;
   color: black
+}
+
+.admin {
+  display: block;
+  border-radius: 2px;
+  margin: 0.5em 0 0.5em 0;
+  width: 100%;
+  background-color: rgba(19, 117, 187, 0.9);
+  color: white;
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 0.5em 0
+}
+
+.admin:hover{
+  background-color: white;
+  color:black;
+}
+
+.admin::after{
+  content: " ";
+}
+
+.admin:hover::after{
+  content: "Admin";
 }
 
 .action-buttons{
@@ -121,32 +151,6 @@ form .big-button:hover{
   background-color: rgb(242, 97, 1);
 }
 
-.admin{
-  width: 6em;
-  height: 2em;
-  border-radius: 5px;
-  background-color: rgb(10, 24, 41);
-  color: rgb(252, 255, 254);
-  padding: 0.3em 2em;
-  margin: 1em 0;
-  border-style: none;
-  text-decoration: none;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1em;
-}
-
-.admin::after{
-  content: "";
-  background-color: none;
-  width: 6em;
-}
-
-.admin:hover::after{
-  content: "Admin";
-  color:black;
-  background-color: white;
-}
-
 .input-form{
   display: block;
   width: 30%;
@@ -163,10 +167,11 @@ form .big-button:hover{
 }
 
 label{
-  /*font-family: 'Rasa', serif;*/
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Rasa', serif;
+  /*font-family: 'Open Sans', sans-serif;*/
   font-size: 2em;
 }
+
 .search{
   display: flex;
   justify-content: center;
@@ -179,9 +184,10 @@ label{
   border: 1px rgba(10, 24, 42, 0.17) solid;
 }
 
-.search h2{
+.search h2 {
   margin: 0
 }
+
 
 section{
   display: block;

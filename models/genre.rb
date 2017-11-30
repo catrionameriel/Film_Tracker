@@ -62,5 +62,25 @@ class Genre
     return films
   end
 
+  def films()
+    sql = 'SELECT * FROM films WHERE genre_id = $1'
+    values = [@id]
+    result = SqlRunner.run(sql, values)
+    films = result.map { |film| Film.new(film) }
+    return films
+  end
+
+  def in_use?(films_to_check)
+    return films_to_check.empty? ? false : true
+  end
+
+  def delete_if_not_in_use(films)
+    answer = self.in_use?(films)
+    if answer == false
+      self.delete
+      return true
+    end
+  end
+
 
 end
