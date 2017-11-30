@@ -6,6 +6,7 @@
     <div class="select">
       <div>
         <select name="id">
+          <option value="">Genre</option>
           <% for genre in @genres %>
           <option value="<%= genre.id %>"> <%= genre.type%></option>
           <% end %>
