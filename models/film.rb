@@ -2,7 +2,6 @@ require_relative('./string')
 require_relative('./genre')
 require_relative('../db/sql_runner')
 require('date')
-require('pry-byebug')
 
 class Film
 
@@ -21,17 +20,17 @@ class Film
 
   def save()
     sql = 'INSERT INTO films(
-    title,
-    genre_id,
-    release_date,
-    seen,
-    rating,
-    date_seen
-    )
-    VALUES(
-    $1, $2, $3, $4, $5, $6
-    )
-    RETURNING *'
+      title,
+      genre_id,
+      release_date,
+      seen,
+      rating,
+      date_seen
+      )
+      VALUES(
+        $1, $2, $3, $4, $5, $6
+      )
+      RETURNING *'
     values = [
       @title,
       @genre_id,
@@ -100,15 +99,15 @@ class Film
       date_seen
       )=
       ($1, $2, $3, $4, $5, $6)
-      WHERE id = $7'
-      values = [
-        @title,
-        @genre_id,
-        @release_date,
-        @seen,
-        @rating,
-        @date_seen,
-        @id
+    WHERE id = $7'
+    values = [
+      @title,
+      @genre_id,
+      @release_date,
+      @seen,
+      @rating,
+      @date_seen,
+      @id
       ]
       result = SqlRunner.run(sql, values)
   end

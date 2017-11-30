@@ -10,6 +10,4 @@ class DateTest < Minitest::Test
     assert_equal(2000-12-05, @date1.to_date)
   end
 
-
-
 end

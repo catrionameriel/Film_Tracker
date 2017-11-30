@@ -16,15 +16,15 @@ class FilmTest < Minitest::Test
       'date_seen' => '2000-12-06',
       })
 
-      @film2 = Film.new({
-        'id' => '2',
-        'title' => 'Forest Gump',
-        'genre_id' => '1',
-        'release_date' => '1994-07-06',
-        'seen' => 'false',
-        'rating' => 'null',
-        'date_seen' => 'null',
-        })
+    @film2 = Film.new({
+      'id' => '2',
+      'title' => 'Forest Gump',
+      'genre_id' => '1',
+      'release_date' => '1994-07-06',
+      'seen' => 'false',
+      'rating' => 'null',
+      'date_seen' => 'null',
+      })
   end
 
   def test_film_has_id

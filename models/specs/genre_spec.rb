@@ -4,6 +4,7 @@ require_relative('../genre')
 
 class TestGenre < MiniTest::Test
 
+
   def setup
     @genre1 = Genre.new({ 'id' => '1', 'type' => 'Comedy'})
     @genre2 = Genre.new({ 'id' => '2', 'type' => 'Horror'})
