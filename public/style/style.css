@@ -121,6 +121,32 @@ form .big-button:hover{
   background-color: rgb(242, 97, 1);
 }
 
+.admin{
+  width: 6em;
+  height: 2em;
+  border-radius: 5px;
+  background-color: rgb(10, 24, 41);
+  color: rgb(252, 255, 254);
+  padding: 0.3em 2em;
+  margin: 1em 0;
+  border-style: none;
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1em;
+}
+
+.admin::after{
+  content: "";
+  background-color: none;
+  width: 6em;
+}
+
+.admin:hover::after{
+  content: "Admin";
+  color:black;
+  background-color: white;
+}
+
 .input-form{
   display: block;
   width: 30%;
