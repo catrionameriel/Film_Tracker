@@ -1,9 +1,7 @@
 <h1>Films I've Seen</h1>
 
-
-
 <div class="search">
-<h2>Search by</h2>
+  <h2>Search by</h2>
   <form action="/films/archive/rating" method="get">
     <div class="select">
       <div>
@@ -26,13 +24,13 @@
   <form action="/films/archive/genre" method="get">
     <div class="select">
       <div>
-      <select name="id" selected required>
-        <option value="" selected disabled>Genre</option>
-        <% for genre in @genres %>
-        <option value="<%= genre.id %>"> <%= genre.type %></option>
-        <% end %>
-      </select>
-      <button class="big-button button">Go</button>
+        <select name="id" selected required>
+          <option value="" selected disabled>Genre</option>
+          <% for genre in @genres %>
+          <option value="<%= genre.id %>"> <%= genre.type %></option>
+          <% end %>
+        </select>
+        <button class="big-button button">Go</button>
       </div>
     </div>
   </form>
@@ -42,24 +40,24 @@
     <% @films.each do |film| %>
     <div class="list">
 
-    <h2><%= film.title %></h2>
+      <h2><%= film.title %></h2>
 
-    <h3><%= film.genre.type %></h3>
+      <h3><%= film.genre.type %></h3>
 
-    <h3>Rating: <%= film.rating %>*</h3>
+      <h3>Rating: <%= film.rating %>*</h3>
 
-    <form class="action-buttons" action="/films/archive/<%=film.id%>" method="get">
-      <button class="big-button button">More</button>
-    </form>
+      <form class="action-buttons" action="/films/archive/<%=film.id%>" method="get">
+        <button class="big-button button">More</button>
+      </form>
 
-    <form class="action-buttons" action="/films/<%=film.id%>/edit" method="get">
-      <button class="big-button button">Edit</button>
-    </form>
+      <form class="action-buttons" action="/films/<%=film.id%>/edit" method="get">
+        <button class="big-button button">Edit</button>
+      </form>
 
-    <form class="action-buttons" action="/films/archive/<%=film.id%>/delete" method="post">
-      <input type="hidden" name="_method" value="delete">
-      <button class="big-button button">Delete</button>
-    </form>
+      <form class="action-buttons" action="/films/archive/<%=film.id%>/delete" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button class="big-button button">Delete</button>
+      </form>
 
     </div>
     <% end %>

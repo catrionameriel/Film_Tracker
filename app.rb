@@ -1,6 +1,5 @@
 require('sinatra')
 require('sinatra/reloader')
-require('pry')
 require_relative('./models/film')
 require_relative('./models/genre')
 require_relative('./controllers/genres_controller')

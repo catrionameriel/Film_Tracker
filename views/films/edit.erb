@@ -3,7 +3,6 @@
 <form class="input-form" action="/films/<%=@film.id%>" method="post">
   <input type="hidden" name="_method" value="put">
 
-
   <div class="field-group">
     <label for="title-field" class="label">Title:</label>
     <div class="field">
@@ -45,19 +44,18 @@
 
   <div class="field-group">
     <div class="field">
-        <input
-          type="radio"
-          name="seen"
-          value="f"
-          checked=<%= "checked" if @film.seen == true %>>
-          Not Seen
-      </div>
+      <input
+        type="radio"
+        name="seen"
+        value="f"
+        checked=<%= "checked" if @film.seen == true %>>
+        Not Seen
+    </div>
       <input
         type="radio"
         name="seen"
         value="t"
-        checked<%= "checked" if @film.seen == false %>
-        >
+        checked<%= "checked" if @film.seen == false %>>
         Seen
     </div>
   </div>
@@ -76,7 +74,6 @@
       </select>
     </div>
   </div>
-
 
 
   <div class="field-group">
