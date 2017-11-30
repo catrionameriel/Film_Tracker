@@ -13,9 +13,11 @@ end
 
 
 # New genre
+
 get '/admin/genres/new' do
   erb(:'genres/new')
 end
+
 
 # Create genre
 
@@ -24,11 +26,13 @@ post '/admin/genres' do
   redirect to '/admin/genres'
 end
 
-# redirect to home
+
+# Redirect to home
 
 get '/admin' do
   redirect to '/admin/genres'
 end
+
 
 # Delete genre
 

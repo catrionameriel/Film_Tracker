@@ -5,8 +5,8 @@
   <form action="/films/genre" method="get">
     <div class="select">
       <div>
-        <select name="id">
-          <option value="">Genre</option>
+        <select name="id" required>
+          <option value="" selected disabled>Genre</option>
           <% for genre in @genres %>
           <option value="<%= genre.id %>"> <%= genre.type%></option>
           <% end %>
@@ -33,12 +33,12 @@
 
   <form class="action-buttons" action="/films/<%=film.id%>/delete" method="post">
     <input type="hidden" name="_method" value="delete">
-  <button class="big-button">Delete</button>
+    <button class="big-button">Delete</button>
   </form>
 
   <form class="action-buttons" action="/films/<%=film.id%>/seen" method="post">
     <input type="hidden" name="_method" value="put">
-  <button class="tick"></button>
+    <button class="tick"></button>
   </form>
 
   </div>

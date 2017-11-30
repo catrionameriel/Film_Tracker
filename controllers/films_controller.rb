@@ -36,13 +36,9 @@ end
 # View not seen films by genre
 get '/films/genre' do
   @id = params[:id]
-  if @id.empty?
-      redirect to '/'
-  else
-    @genre = Genre.find_by_id(@id)
-    @films = @genre.films_not_seen
-    erb(:'films/genre_unseen')
-  end
+  @genre = Genre.find_by_id(@id)
+  @films = @genre.films_not_seen
+  erb(:'films/genre_unseen')
 end
 
 # View more info
