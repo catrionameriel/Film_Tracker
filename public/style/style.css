@@ -24,6 +24,8 @@ h3{
 h4{
   font-family: 'Quicksand', sans-serif;
   font-size: 3em;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 nav{
@@ -176,6 +178,7 @@ label{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 50%;
   margin-left: auto;
   margin-right: auto;
@@ -186,6 +189,10 @@ label{
 
 .search h2 {
   margin: 0
+}
+
+.search.back{
+  flex-direction: column;
 }
 
 

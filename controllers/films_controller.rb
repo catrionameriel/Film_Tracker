@@ -59,7 +59,11 @@ post '/films' do
   params[:release_date] = Date.parse(params[:release_date])
   Film.check_params(params)
   @new_film = Film.new(params).save
-  redirect to '/films'
+  redirect to '/films/created'
+end
+
+get '/films/created' do
+  erb(:'films/created_message')
 end
 
 # Edit
@@ -82,8 +86,14 @@ put '/films/:id' do
   params[:release_date] = Date.parse(params[:release_date])
   Film.check_params(params)
   Film.new(params).update
-  redirect to '/films'
+  redirect to '/films/updated'
 end
+
+# updated page
+get '/films/updated' do
+  erb(:'films/update_message')
+end
+
 
 # Delete seen
 delete '/films/archive/:id/delete' do
