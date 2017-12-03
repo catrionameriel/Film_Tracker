@@ -3,11 +3,13 @@
 A film tracking app that allows the user to store films that they want to see, including a release date and genre, but also has an archive in order to keep track of films that they have seen as well, along with the users rating of that films. This serves as a useful archive and recommendation tool but also easily places the unseen films in another section once they have been watched.
 
 ### Built with:
-- Ruby fundamentals
-- TDD (where appropriate)
-- OOP
-- Web Programming (REST/MVC)
-- Databases with CRUD actions
+
+- Ruby - object orientated programming language
+- HTML - markup language
+- CSS - style language
+- SQL - database language
+- Sinatra - web framework used
+- Postrgres - an object-relational database management system
 
 
 ## Getting Started
@@ -33,6 +35,13 @@ To run this web app, you will need to be able to require:
 ## Motivation
 
 This web app was created as part of a week long project undertaken while attending CodeClan's 16-week intensive course. At the beginning of the week, we were given four briefs to choose from in which we would implement, consolidate and expand on everything we'd learnt so far.
+
+This included:
+- Ruby fundamentals
+- TDD (where appropriate)
+- OOP
+- Web Programming (REST/MVC)
+- Databases with CRUD actions
 
 Despite some interesting briefs, I had a burning idea for a Film Tracking app. As nothing quite like this exists on the market, I wanted to create my own, using the tools I had.
 
@@ -61,7 +70,7 @@ You must be able to input new films (which should include a title and the date i
 
 ## Author
 
-**Catriona Meriel** - Original author and creator of **SeeSaw**
+**Catriona Meriel** - Original author and founder of **SeeSaw**
 
 
 ### Contributing
